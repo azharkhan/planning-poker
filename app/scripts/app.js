@@ -11,7 +11,16 @@ angular.module('planningPokerApp', [])
         templateUrl: 'views/projects.html',
         controller: 'ProjectCtrl'
       })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'AuthCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
+  });
+
+angular.module('planningPokerApp')
+  .config(function($httpProvider) {
+    $httpProvider.defaults.useXDomain = true;
   });
